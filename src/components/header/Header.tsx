@@ -1,15 +1,33 @@
+import { Link } from 'react-router-dom';
+
+import { GoHome } from "react-icons/go";
+import { FaRegUser } from "react-icons/fa";
+import { MdComputer } from "react-icons/md";
 import './Header.css';
 
 const Header = () => {
   return (
     <header className="app-header">
       <nav className="navbar">
-        <h3 className="navbar-brand">My Portfolio</h3>
+        <Link to="/">
+          <h3 className="navbar-brand">MrWinRock</h3>
+        </Link>
         <ul className="navbar-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li className='link'>
+            <Link to="/">
+              <GoHome /> Home
+            </Link>
+          </li>
+          <li className='link'>
+            <Link to="/about">
+              <FaRegUser /> About
+            </Link>
+          </li>
+          <li className='link'>
+            <Link to="/projects">
+              <MdComputer /> Projects
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>

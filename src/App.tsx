@@ -1,13 +1,20 @@
 import "./App.css";
 import Header from "./components/header/Header";
+import ScrollToTop from "./components/hooks/ScrollToTop";
+import AppRoutes from "./routes";
+import { BrowserRouter as Router } from "react-router-dom";
 
-function App() {
-
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <Header />
-    </div>
+    <Router>
+      <ScrollToTop>
+        <div className="App">
+          <Header />
+          <AppRoutes />
+        </div>
+      </ScrollToTop>
+    </Router>
   );
-}
+};
 
 export default App;
